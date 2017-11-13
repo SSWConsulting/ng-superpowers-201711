@@ -10,7 +10,7 @@ export class CompanyService {
   constructor(private httpClient: HttpClient) { }
 
   getCompanies(): Observable<Company[]> {
-    return this.httpClient.get<Company>(`${this.API_BASE}/company`)
+    return this.httpClient.get<Company[]>(`${this.API_BASE}/company`);
   }
 
 }
