@@ -13,4 +13,8 @@ export class CompanyService {
     return this.httpClient.get<Company[]>(`${this.API_BASE}/company`);
   }
 
+  getTest(){
+
+  }
+
 }
