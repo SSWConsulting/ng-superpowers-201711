@@ -28,6 +28,17 @@ export class CompanyService {
     .pipe(catchError(this.errorHandler));
   }
 
+  updateCompany(company: Company){
+    return this.httpClient.put<Company>(`${this.API_BASE}/company/${company.id}`, company,
+    { headers: new HttpHeaders().set('content-type', 'application/json' ) }
+    )
+  }
+
+  getCompany(companyId: number): Observable<Company>{
+    return this.httpClient.get<Company>(`${this.API_BASE}/company/${companyId}`)
+    .pipe(catchError(this.errorHandler))
+  }
+
   errorHandler(): Observable<Company> {
     console.error('ERROR');
     return new EmptyObservable();
