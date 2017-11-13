@@ -13,8 +13,8 @@ export class CompanyService {
     return this.httpClient.get<Company[]>(`${this.API_BASE}/company`);
   }
 
-  getTest(){
-
+  deleteCompany(companyId: number){
+    return this.httpClient.delete<Company>(`${this.API_BASE}/company/${companyId}`);
   }
 
 }
